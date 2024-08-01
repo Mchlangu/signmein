@@ -1,70 +1,45 @@
 package com.intellidev.signmein.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import java.util.Collection;
 
 @Data
-@Builder
+@Entity
+@Table(name = "users")
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "_user")
-public class User implements UserDetails {
-
+public class User {
     @Id
-    @GeneratedValue
-    private Integer id;
-    private String firstname;
-    private String lastname;
-    private String email;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotNull
+    @Column(nullable = false, unique = true)
+    @NotBlank(message = "Username is mandatory")
+    private String username;
+
+    @NotNull
+    @Column(nullable = false)
+    @NotBlank(message = "Password is mandatory")
     private String password;
-    private boolean isAccountNonExpired;
-    private boolean isAccountNonLocked;
-    private boolean isCredentialsNonExpired;
-    private boolean isEnabled;
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
 
-    @Override
-    public String getPassword() {
-        return password;
-    }
+    @NotNull
+    @Column(nullable = false, unique = true)
+    @Email(message = "Email should be valid")
+    @NotBlank(message = "Email is mandatory")
+    private String email;
 
-    @Override
-    public String getUsername() {
-        return email;
-    }
+    @NotNull
+    @NotBlank(message = "Full name is mandatory")
+    private String fullName;
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return isAccountNonExpired;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return isAccountNonLocked;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return isCredentialsNonExpired;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return isEnabled;
-    }
+    @NotNull
+    @NotBlank(message = "role cannot be blank")
+    private String role;
 }
