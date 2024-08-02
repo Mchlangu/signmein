@@ -1,4 +1,4 @@
-package com.intellidev.signmein.Controller;
+package com.intellidev.signmein.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

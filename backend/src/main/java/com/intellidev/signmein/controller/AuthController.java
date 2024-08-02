@@ -1,4 +1,4 @@
-package com.intellidev.signmein.Controller;
+package com.intellidev.signmein.controller;
 
 import com.intellidev.signmein.dto.AuthResponseDto;
 import com.intellidev.signmein.dto.LoginDto;

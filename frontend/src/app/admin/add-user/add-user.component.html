@@ -1,0 +1,23 @@
+<div class="container mx-auto p-4">
+    <h2 class="text-2xl font-bold mb-4">Add User</h2>
+    <form (ngSubmit)="addUser()">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+        <input [(ngModel)]="user.name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2">Username</label>
+        <input [(ngModel)]="user.username" name="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+        <input [(ngModel)]="user.email" name="email" type="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+        <input [(ngModel)]="user.password" name="password" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+      </div>
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Add User</button>
+    </form>
+  </div>
+  
