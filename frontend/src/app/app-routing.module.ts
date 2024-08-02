@@ -6,9 +6,9 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },  // Redirect root to /home
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, 
   { path: 'home', loadChildren: () => import('./components/main/main.module').then(m => m.MainModule), canActivate: [AuthGuard] },
-  { path: 'admin', component: DashboardComponent, canActivate: [AuthGuard] }  // Add this line for the admin dashboard
+  { path: 'admin', component: DashboardComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

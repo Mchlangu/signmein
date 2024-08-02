@@ -10,9 +10,9 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent {
   loginDto: LoginDto = { username: '', password: '' };
-  private buildingLatitude = 40.7128; // Replace with actual building latitude
-  private buildingLongitude = -74.0060; // Replace with actual building longitude
-  private maxDistance = 0.01; // Adjust the distance tolerance as needed
+  private buildingLatitude = 40.7128;
+  private buildingLongitude = -74.0060; 
+  private maxDistance = 0.01;
 
   constructor(private authService: AuthService, private router: Router, private http: HttpClient) {}
 

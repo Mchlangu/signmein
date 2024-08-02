@@ -16,7 +16,7 @@ export class AuthService {
     return this.http.post<AuthResponseDto>(`${this.apiUrl}/login`, loginDto);
   }
 
-  signout(): void {
+  logout(): void {
     localStorage.removeItem('accessToken');
   }
 }

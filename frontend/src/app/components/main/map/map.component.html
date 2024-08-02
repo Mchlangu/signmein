@@ -1,0 +1,9 @@
+<div *ngIf="latitude && longitude">
+    <p>Latitude: {{ latitude }}</p>
+    <p>Longitude: {{ longitude }}</p>
+    <p>Use radius:{{userRadius}}</p>
+  </div>
+  <div *ngIf="error">
+    <p>Error: {{ error }}</p>
+  </div>
+  
